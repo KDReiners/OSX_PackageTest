@@ -12,7 +12,8 @@
 		2D45417C27D4C7CC0095486D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D45417B27D4C7CC0095486D /* Assets.xcassets */; };
 		2D45417F27D4C7CC0095486D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D45417E27D4C7CC0095486D /* Preview Assets.xcassets */; };
 		2D45418127D4C7CC0095486D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45418027D4C7CC0095486D /* Persistence.swift */; };
-		2D45418427D4C7CC0095486D /* OSX_PackageTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D45418227D4C7CC0095486D /* OSX_PackageTest.xcdatamodeld */; };
+		2D45418D27D4C8690095486D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D45418C27D4C8690095486D /* CloudKit.framework */; };
+		2D45419627D4D6010095486D /* healthKitPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D45419527D4D6010095486D /* healthKitPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +23,9 @@
 		2D45417B27D4C7CC0095486D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D45417E27D4C7CC0095486D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D45418027D4C7CC0095486D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		2D45418327D4C7CC0095486D /* OSX_PackageTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OSX_PackageTest.xcdatamodel; sourceTree = "<group>"; };
 		2D45418527D4C7CC0095486D /* OSX_PackageTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OSX_PackageTest.entitlements; sourceTree = "<group>"; };
+		2D45418C27D4C8690095486D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2D45419427D4D5BB0095486D /* healthKitPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = healthKitPackage; path = ../../healthKitPackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D45419627D4D6010095486D /* healthKitPackage in Frameworks */,
+				2D45418D27D4C8690095486D /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				2D45417627D4C7C50095486D /* OSX_PackageTest */,
 				2D45417527D4C7C50095486D /* Products */,
+				2D45418B27D4C8690095486D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +61,12 @@
 		2D45417627D4C7C50095486D /* OSX_PackageTest */ = {
 			isa = PBXGroup;
 			children = (
+				2D45419427D4D5BB0095486D /* healthKitPackage */,
 				2D45417727D4C7C50095486D /* OSX_PackageTestApp.swift */,
 				2D45417927D4C7C50095486D /* ContentView.swift */,
 				2D45417B27D4C7CC0095486D /* Assets.xcassets */,
 				2D45418027D4C7CC0095486D /* Persistence.swift */,
 				2D45418527D4C7CC0095486D /* OSX_PackageTest.entitlements */,
-				2D45418227D4C7CC0095486D /* OSX_PackageTest.xcdatamodeld */,
 				2D45417D27D4C7CC0095486D /* Preview Content */,
 			);
 			path = OSX_PackageTest;
@@ -73,6 +78,14 @@
 				2D45417E27D4C7CC0095486D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2D45418B27D4C8690095486D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D45418C27D4C8690095486D /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +104,9 @@
 			dependencies = (
 			);
 			name = OSX_PackageTest;
+			packageProductDependencies = (
+				2D45419527D4D6010095486D /* healthKitPackage */,
+			);
 			productName = OSX_PackageTest;
 			productReference = 2D45417427D4C7C50095486D /* OSX_PackageTest.app */;
 			productType = "com.apple.product-type.application";
@@ -146,7 +162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D45418127D4C7CC0095486D /* Persistence.swift in Sources */,
-				2D45418427D4C7CC0095486D /* OSX_PackageTest.xcdatamodeld in Sources */,
 				2D45417A27D4C7C50095486D /* ContentView.swift in Sources */,
 				2D45417827D4C7C50095486D /* OSX_PackageTestApp.swift in Sources */,
 			);
@@ -347,18 +362,12 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		2D45418227D4C7CC0095486D /* OSX_PackageTest.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2D45418327D4C7CC0095486D /* OSX_PackageTest.xcdatamodel */,
-			);
-			currentVersion = 2D45418327D4C7CC0095486D /* OSX_PackageTest.xcdatamodel */;
-			path = OSX_PackageTest.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCSwiftPackageProductDependency section */
+		2D45419527D4D6010095486D /* healthKitPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = healthKitPackage;
 		};
-/* End XCVersionGroup section */
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D45416C27D4C7C50095486D /* Project object */;
 }
