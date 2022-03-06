@@ -1,0 +1,20 @@
+//
+//  OSX_PackageTestApp.swift
+//  OSX_PackageTest
+//
+//  Created by Klaus-Dieter Reiners on 06.03.22.
+//
+
+import SwiftUI
+
+@main
+struct OSX_PackageTestApp: App {
+    let persistenceController = PersistenceController.shared
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        }
+    }
+}
